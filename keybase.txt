@@ -1,0 +1,73 @@
+==================================================================
+https://keybase.io/kheimerl
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://kurti.sh
+  * I am kheimerl (https://keybase.io/kheimerl) on keybase.
+  * I have a public key with fingerprint D024 1782 7B6B 38E5 251B  38A8 261F 2358 B806 C6E6
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01019eb8e042d6419aced5cecc2775e593d7129487edda400abc70265a8bf0807f660a",
+            "fingerprint": "d02417827b6b38e5251b38a8261f2358b806c6e6",
+            "host": "keybase.io",
+            "key_id": "261f2358b806c6e6",
+            "kid": "01019eb8e042d6419aced5cecc2775e593d7129487edda400abc70265a8bf0807f660a",
+            "uid": "25c9291f60e1aead8f39b76e2ea50519",
+            "username": "kheimerl"
+        },
+        "service": {
+            "hostname": "kurti.sh",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1486013935,
+    "expire_in": 157680000,
+    "prev": "e4e594e111ecfd098839b93d27ef1bd6ad4057eba0e86077c913c53302a94049",
+    "seqno": 7,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1
+
+owGtUm1QVGUYXRYWW/wAZIQYK+gWohOs7717P7cRLHIXsRqhkE0SuB/v3b0Be5e7
+uyABSYCMxsA6KDrKjKKjZWSgDgYFEUhQk1IzzWQmoaZCA8ZmapagTfda/utn759n
+3mfOOc85zzw7Fgbr9EHL4p6y94SOTAadmeJ09uYRQwXCyUI5YqlACuGDAosE6PHm
+F0oCYkEAClAGcjQEOCaQOMqwPBQIHvI8RlEEJBizQKEYg9MUFAQWB4DleApgJMHS
+nAhoQIkkCVgkCREllwMqbkVyeVVZAWA4StEYxZGcmYYERqBqZWmMREXMTNAcDUie
+hKRKdMoejaGa41gPNEmy2lM/+Q/s/Qf+f/bt+2cOwTMYg4okgCgLWYEWzQxHkRCD
+LAEIlNGAHqi42GKoeXVCqRgqRUhVEqJ2SyUeaovVkjxE+BSvZPI4VZ5bkb0yLxep
+XafX67ZoJG+5W0OVQS7/X34+J7kEdYUqoRQqHkl2IRZURfJeSRNEcZoEqJkxE0kI
+3OyWFJgvaQiCImmgPm0MLFUlIa5mxyGKopB/RRQAQ9NqEnUbGAVFlBNIVsABQUGO
+BVCVpCieQc08YTYDjGVwgGtJPbDEJSMWSvXJOlRNj+RwsV6fApGqsO36x0J0QXpd
+qEGvHZcuzBjx8OJuvRWhO9k/l9HmqCw+4k9ZPdx7ZWLeL+PPKDukRcUdti9N6an6
+fc0burr0poS4z37MfC4rNnC+vWzlzpYrZatr34ua6RxOsH3x9o2Qz+9n6DeNWkPS
+P+mNP2PNrVa2HbHvav7OnrZKCrQ21Ts7ppLDfL4/Ulodp/055ZG+p9cMXI+Yv/ad
+89P9pZ21i+hG9M1q4kJM/TcHxqJSbRdbzobFVxZ8NTP4UzDyuD+nbb/l7mJa7poo
++Xj5Yr11kgnfIuy+ahUNB12Nr6aO6w/2BUctfzG8uG6kG/Ki/eZZr7HuBW5v08TC
+htBB0xbY9uyldtaY2RA7ZJ53bYEVydsry+l1uzZX7+ytmK8cHk1ekjN8ayrxWPvg
+bP/Gl3YXGBXh8grkWPzSoOo7zmV9ma9vfdI6cLtVuvsX+ND5xHR7+OC2ddQbJ19G
+/NhcfLbTEHX1sFwSnbKystDRWFFwesnAphOnDq1tQP2hH80JQ2tiIrDEr3O5kOO9
++2w10U0fjN3MYFu/X6HPRbNOJNak1Kyvn+nwJR7qTl63J3r7nlX26M5Px6qy00Ze
+A5MT049k5V14v/bd8YQfLm8MDI56Dhy9vmFBwNgl5sz++W23qa//17QBAzG2Py7s
++RjH0qGq3HvItXNzdiTunm02cOf+UZuluefGKUOs1HDOfzE7r7fl0fhLxyN7gnPW
+i4bbv//2c+Tf
+=Ltd9
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/kheimerl
+
+==================================================================
