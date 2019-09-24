@@ -21,7 +21,7 @@ h3 { font-size: 1.7em; font-weight: normal; margin: 0 0 20px; }
 .post { clear: both; padding: 30px 10px; border-top: 1px solid #ddd;  border-bottom: 1px solid #ddd; margin: 0 0 40px; 
     }
 
-	.post .details { float: left; width: 15%; font: .8em Georgia, "Times New Roman", Serif;}
+	.post .details { float: left; width: 25%; font: .8em Georgia, "Times New Roman", Serif;}
 	.post .details p{line-height:1.3em; margin: 0 0 7px;}
 	.post .details .info { font-size: .9em; color: #999; }
 		.post .details .info a { color: #777; border-bottom: 1px dotted #999; padding: 3px 1px; }
