@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Kurtis Heimerl">
+<title>African Infrastructure Datasets</title>
+<style>
+  :root {
+    --bg: #fff; --fg: #222; --muted: #777; --rule: #ddd; --link: #00002F; --link-hover: #00006F;
+    --hi: #990000; --row: #f7f7f7; --high: #2a6b2a; --medium: #8a6d00; --low: #990000;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161616; --fg: #ddd; --muted: #999; --rule: #3a3a3a; --link: #a8b8ff; --link-hover: #cdd6ff;
+      --hi: #ff8a80; --row: #1f1f1f; --high: #7fcf7f; --medium: #e0c060; --low: #ff8a80;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px/1.65 Georgia, "Times New Roman", serif; background: var(--bg); color: var(--fg); }
+  main { max-width: 900px; margin: 40px auto; padding: 0 16px; }
+  a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--link); overflow-wrap: anywhere; }
+  a:hover { color: var(--link-hover); border-bottom-style: solid; }
+  h1 { font-weight: normal; font-style: italic; font-size: 2em; margin: 0 0 4px; }
+  h2 { font-weight: normal; font-size: 1.45em; margin: 40px 0 12px; padding-top: 16px; border-top: 1px solid var(--rule); }
+  h3 { font-size: 1.05em; margin: 22px 0 6px; }
+  p, li { margin: 0 0 10px; }
+  ul { padding-left: 22px; }
+  .meta { color: var(--muted); font-size: .9em; margin-bottom: 24px; }
+  .callout { border-left: 3px solid var(--hi); padding: 4px 0 4px 16px; margin: 20px 0; }
+  .table-wrap { overflow-x: auto; margin: 12px 0 8px; }
+  table { border-collapse: collapse; width: 100%; font-size: .85em; line-height: 1.45; }
+  th, td { text-align: left; vertical-align: top; padding: 7px 8px; border-bottom: 1px solid var(--rule); }
+  th { font-weight: bold; white-space: nowrap; }
+  tbody tr:nth-child(even) { background: var(--row); }
+  td.layer { color: var(--muted); font-style: italic; white-space: nowrap; }
+  .conf { font-size: .8em; text-transform: uppercase; letter-spacing: .04em; white-space: nowrap; }
+  .conf.high { color: var(--high); } .conf.medium { color: var(--medium); } .conf.low { color: var(--low); }
+  .conf.nv { color: var(--muted); }
+  .note { color: var(--muted); font-size: .9em; }
+  ol.sources { font-size: .85em; padding-left: 26px; }
+  footer { margin: 48px 0 24px; padding-top: 16px; border-top: 1px solid var(--rule); color: var(--muted); font-size: .85em; }
+</style>
+</head>
+<body>
+<main>
+
+<p class="meta"><a href="./">claude/</a> · <a href="../">kurti.sh</a></p>
+<h1>African Infrastructure Datasets</h1>
+<p class="meta">Datacenters, subsea cable landings, and power grids: what data exists and how it might be joined. Compiled October 20, 2026.</p>
+
+<div class="callout">
+<p><strong>Bottom line.</strong> No open dataset links African datacenters, subsea cable landing stations, and the power grids that serve them at facility level. Each layer exists on its own, with different granularity, licensing, and vintage. The open grid layers are line-level but several years old; datacenter inventories are commercial and inconsistent; landing-point data is city-level unless you pay; reliability data is survey- or satellite-proxy-based. The only verified cross-layer study works at the level of 43 continental synchronous grid zones. A facility-level, openly licensed join of these layers does not appear to exist.</p>
+</div>
+
+<h2>Dataset overview</h2>
+<p class="note">Confidence reflects the adversarial verification described at the bottom of the page. “Not verified” means the source was named but no claim about it survived checking; it is not a judgment that the source is unhelpful.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Layer</th><th>Dataset</th><th>Granularity</th><th>License / access</th><th>Recency</th><th>Conf.</th></tr></thead>
+<tbody>
+<tr><td class="layer">Datacenters / IXPs</td><td>PeeringDB</td><td>Facility &amp; IXP points, self-reported</td><td>Free API</td><td>Live; Africa coverage figures from 2019</td><td><span class="conf high">high</span></td></tr>
+<tr><td class="layer">Datacenters / IXPs</td><td>PCH IXP directory</td><td>IXP list</td><td>Free</td><td>Live</td><td><span class="conf nv">not verified</span></td></tr>
+<tr><td class="layer">Datacenters</td><td>Data Center Map</td><td>Facility listings</td><td>Browse free; export paid</td><td>183 sites / 33 countries (Apr 2025)</td><td><span class="conf medium">medium</span></td></tr>
+<tr><td class="layer">Datacenters</td><td>Intelpoint (Techpoint Africa)</td><td>Country counts</td><td>Free articles; derived from Data Center Map</td><td>249 or 282 sites (Feb 2026)</td><td><span class="conf medium">medium</span></td></tr>
+<tr><td class="layer">Datacenters</td><td>ADCA / Rising Advisory; Fortren &amp; Co.</td><td>Continental MW totals</td><td>Reports; methods undisclosed</td><td>2026</td><td><span class="conf low">low</span></td></tr>
+<tr><td class="layer">Subsea cables</td><td>TeleGeography Submarine Cable Map</td><td>Cables; landing points at city level</td><td>Maps/screenshots CC BY-SA 4.0; data needs paid annual license</td><td>Live</td><td><span class="conf high">high</span></td></tr>
+<tr><td class="layer">Subsea cables</td><td>Old TeleGeography GitHub repo (forks)</td><td>Cables, landing points</td><td>Forks labeled CC BY-NC-SA 3.0; status unclear</td><td>≈2022 snapshot</td><td><span class="conf low">low</span></td></tr>
+<tr><td class="layer">Subsea cables</td><td>OSM <code>telecom=cable_landing_station</code></td><td>Station-level; can sit inside a <code>telecom=data_center</code></td><td>ODbL</td><td>Tag approved Apr 2026; African coverage unmeasured</td><td><span class="conf high">high</span></td></tr>
+<tr><td class="layer">Subsea cables</td><td>African Undersea Cables (Steve Song)</td><td>Map + ownership matrix</td><td>Viewable; no download (SVG on request)</td><td>Sep 2025 (v57)</td><td><span class="conf high">high</span></td></tr>
+<tr><td class="layer">Terrestrial fibre</td><td>AfTerFibre (NSRC)</td><td>Terrestrial fibre routes</td><td>Open initiative; bulk GIS download not confirmed</td><td>Undated</td><td><span class="conf high">high</span></td></tr>
+<tr><td class="layer">Cable ↔ IP</td><td>Nautilus (UCI)</td><td>IP link → cable, with confidence score</td><td>Apache 2.0 (GitLab)</td><td>2022–23 snapshot</td><td><span class="conf high">high</span></td></tr>
+<tr><td class="layer">Grid</td><td>World Bank Africa T&amp;D grid map (energydata.info)</td><td>Line-level, sub-kV to 700 kV, existing + planned</td><td>CC BY 4.0</td><td>2017 snapshot (files 2018)</td><td><span class="conf high">high</span></td></tr>
+<tr><td class="layer">Grid</td><td>Gridfinder</td><td>Predicted MV lines + OSM HV lines</td><td>Open</td><td>≈2019</td><td><span class="conf high">high</span></td></tr>
+<tr><td class="layer">Grid</td><td>Ember Electricity Data Explorer</td><td>National generation mix, capacity, demand</td><td>CC BY 4.0</td><td>Annual; current, lagged for small grids</td><td><span class="conf high">high</span></td></tr>
+<tr><td class="layer">Reliability</td><td>World Bank Enterprise Surveys (var. c7)</td><td>Firm-reported outages per month; country-year</td><td>WB microdata catalog</td><td>Per survey wave</td><td><span class="conf medium">medium</span></td></tr>
+<tr><td class="layer">Reliability</td><td>EOG / Payne Institute VIIRS instability</td><td>Satellite proxy; 16 test sites</td><td>Research method</td><td>2012–mid-2020</td><td><span class="conf medium">medium</span></td></tr>
+<tr><td class="layer">Reliability</td><td>IODA power-outage pilot</td><td>Scraped utility outages, ≈12 unnamed countries</td><td>Unreleased</td><td>Pilot (2025)</td><td><span class="conf high">high</span></td></tr>
+<tr><td class="layer">Reliability</td><td>Cloudflare Radar disruption summaries</td><td>Country / ASN level</td><td>Free</td><td>Quarterly</td><td><span class="conf high">high</span></td></tr>
+<tr><td class="layer">Cross-layer</td><td>Abdu Jyothi 2023 (arXiv 2306.02502)</td><td>43 synchronous grid zones × ITDK, PCH, AWS</td><td>Preprint; no public download</td><td>2023</td><td><span class="conf high">high</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>1. Datacenters, colocation, and IXPs</h2>
+<h3>PeeringDB</h3>
+<p>The main open source for colocation facilities and IXPs, but self-reported and historically sparse for Africa. PeeringDB's own AfPIF 2019 deck shows South Africa with 6 IXPs, 18 facilities, and 313 of 538 RIR-allocated ASNs registered (≈58%). Seychelles, Botswana, Algeria, Liberia, Libya, Mali, Senegal, Ethiopia, Sierra Leone, South Sudan, and Niger all showed zero IXPs and zero facilities despite having RIR-registered networks, and some had operating IXPs at the time (BINX, SENIX) that were not listed. Coverage has improved since (a BINX record now exists, updated 2024), but treat the 2019 numbers as a snapshot. The 538 figure may include allocated but unannounced ASNs, so the gap may be overstated.<sup>[1]</sup></p>
+
+<h3>Commercial facility inventories</h3>
+<p>Facility-level inventories come mostly from commercial directories and secondary repackagers, and their counts disagree. Data Center Map listed 183 datacenters in 33 African countries in April 2025 (up from 155 in 31 countries in January 2025); browsing is free, exports are paid. Intelpoint reports 282 African datacenters for February 2026 on one page and 249 on another, both with South Africa at 61; its only stated source is “Data Centre Map, Online sources.” These are directory counts, not a census.<sup>[2][3]</sup></p>
+
+<h3>Capacity (MW)</h3>
+<p>Continental MW figures come from consultancy reports with undisclosed methods. ADCA / Rising Advisory (Feb 2026) gives ≈360 MW of active IT load, 238 MW under construction, and 656 MW planned. A Fortren &amp; Company report covered by Nairametrics (July 2026) gives &gt;500 MW operational and 890 MW in the pipeline. Both put South Africa above 60%, which is consistent with Engineering News (≈350 MW across 56 South African facilities, Dec 2025) and Teraco (≈190 MW critical load). The gap likely reflects IT load versus facility capacity. Low confidence: the primary Fortren report was not found.<sup>[4]</sup></p>
+
+<h2>2. Subsea cables and landing stations</h2>
+<h3>TeleGeography Submarine Cable Map</h3>
+<p>The standard reference. Its public maps, URLs, and screen captures are CC BY-SA 4.0, so an annotated figure can be reused with credit but must itself be released CC BY-SA. The underlying cable and landing-point databases are restricted to paying subscribers; raw geocoded data requires a separate annual license, with no published pricing or academic terms (universities are directed to sales@telegeography.com). The licensed dataset includes cable name, country, planning status, RFS date, length, ownership, and landing points, delivered as JSON/GeoJSON via S3 or SFTP. The public map identifies landing points at city level (e.g., all Lagos-area landings collapse to “Lagos”); the license page does not say whether the paid data is station-level.<sup>[5][6]</sup></p>
+<p>The free interactive map is backed by public JSON endpoints, and the former GitHub repo (deleted ≈2022) survives in forks labeled CC BY-NC-SA 3.0. Neither carries a current grant of reuse rights from TeleGeography, and the repo predates 2Africa and Equiano going live. Low confidence on the legal status.</p>
+
+<h3>OpenStreetMap</h3>
+<p><code>telecom=cable_landing_station</code> was approved 12–0 in a vote held April 1–14, 2026, for facilities whose main purpose is terminating submarine telecom cables. Stand-alone stations are mapped as building outlines; a station inside a <code>telecom=data_center</code> or other shared building is mapped as a node at its approximate position. That gives station-level geolocation and a containment test for colocation, but only where mappers have tagged it. African coverage has not been measured and is likely thin given the recent approval.<sup>[7]</sup></p>
+
+<h3>Steve Song's maps</h3>
+<p>The African Undersea Cables page (manypossibilities.net) provides a map and an investor/ownership matrix (SAT-3/SAFE, SEACOM, EASSy, MainOne, WACS, ACE, LION2, TEAMS), last updated September 2025 (v57), with no download beyond an SVG on request. AfTerFibre, hosted by NSRC since 2016, covers terrestrial fibre only; a claim that it offers bulk CSV/SHP/KML/GeoJSON downloads via a CartoDB API was refuted.<sup>[8][9]</sup></p>
+
+<h3>Landing station ↔ datacenter relationships</h3>
+<p>Documented only case by case, mostly in trade press repeating operator releases. Two patterns appear:</p>
+<ul>
+<li><strong>Colocated.</strong> WIOCC landed 2Africa directly at OADC Durban in Amanzimtoti (Feb 2023). MainOne's MDXi Lekki datacenter in Lagos, now Equinix LG1, sits next to MainOne's landing station.<sup>[10][11]</sup></li>
+<li><strong>Backhauled.</strong> Equiano lands at Openserve's Melkbosstrand station and is backhauled by Liquid, Openserve, and WIOCC to Teraco's Cape Town CT1/CT2 campus, which also reaches SAT-3/SAFE, ACE, and WACS via carrier cross-connects.<sup>[12]</sup></li>
+</ul>
+<p>Some sources only resolve to the city: DCD ties Icolo's Mombasa datacenter to Mombasa as the “landing point” without naming a station. No structured dataset of these relationships was found. Nothing verified describes power supply, backup generation, or power-feed equipment at African landing stations.<sup>[13]</sup></p>
+
+<h2>3. Power grids</h2>
+<h3>World Bank Africa Electricity Transmission and Distribution Grid Map</h3>
+<p>The main open line-level transmission dataset (energydata.info): existing and planned lines for every continental African country plus Madagascar, later extended to MENA, from sub-kV to 700 kV. CC BY 4.0 (World Bank Group, author Christopher Arderne), WGS84, GeoJSON and zipped Shapefile, with per-line country, status, source, and voltage_kV. The line data is a 2017-09-06 snapshot last modified November 2018; some inputs (AICD, ≈2008–2010, and digitized PDF maps) are old and only approximate. Completeness varies widely by country.<sup>[14]</sup></p>
+
+<h3>Gridfinder</h3>
+<p>Arderne et al., <em>Scientific Data</em> 2020. Predicts medium-voltage lines from filtered VIIRS nighttime lights using least-cost routing along roads to known OSM networks, and pairs them with high-voltage lines mostly from OSM. ≈75% accuracy on 15 km cells, validated against 16 networks in 14 countries, 9 of them African (Namibia, Kenya, Nigeria, Zambia, Burundi, Ethiopia, Malawi, Tanzania, Uganda). Predictions stop at national borders, and accuracy is inflated where large areas are easy to classify as unserved. ≈2019, not refreshed. In practice, also the easiest route into OSM power-line coverage for Africa.<sup>[15]</sup></p>
+
+<h3>Ember</h3>
+<p>Electricity Data Explorer: CC BY 4.0, 215 countries, yearly generation, capacity, emissions, and demand. National-level only, with no plant-level or sub-national detail. Only 91 countries have 2025 yearly data and few African countries are in the monthly set, so many smaller African grids lag by a year or more and recent values are estimates.<sup>[16]</sup></p>
+
+<h2>4. Reliability and outages</h2>
+<ul>
+<li><strong>World Bank Enterprise Surveys, variable c7:</strong> number of power outages a firm experienced in a typical month. Firm-reported survey data, released per country-year; usually asked only of firms reporting outages in c6.<sup>[17]</sup></li>
+<li><strong>VIIRS nighttime-lights instability (Elvidge et al., Remote Sensing 2020):</strong> “percent outage” and “annual cycling” indicators across 16 test sites in Africa, Asia, and North America, 2012–mid-2020. A method study, not a maintained continental product; noisy and not validated against utility ground truth.<sup>[18]</sup></li>
+<li><strong>IODA power-outage pilot (Georgia Tech):</strong> scrapes outage data from utility and government sites in about a dozen unnamed countries to correlate with connectivity loss. Unpublished as of October 2026; no power data source in the IODA API.<sup>[19]</sup></li>
+<li><strong>Cloudflare Radar quarterly summaries:</strong> record grid-caused outages at country level, e.g., Kenya's nationwide blackout on December 17–18, 2024, with traffic down more than 70% until power returned.<sup>[20]</sup></li>
+</ul>
+
+<h2>5. Cross-layer research</h2>
+<h3>Internet infrastructure × power grids</h3>
+<p>Abdu Jyothi (arXiv 2306.02502, 2023) built a global dataset of 43 wide-area synchronous grids (including WAPP), from grid-operator sites and GENI, and overlaid CAIDA ITDK topology, the PCH IXP directory (1,097 IXPs), DNS root instances, and AWS (27 regions and 87 AZs, collapsing to 19 once grid dependency is considered). It works at grid-zone level, uses no PeeringDB or colocation data, models no line-level transmission, and has no public download.<sup>[21]</sup></p>
+
+<h3>Subsea cables × IP topology</h3>
+<p>Nautilus (Ramanathan and Abdu Jyothi, POMACS/SIGMETRICS 2023) maps IP links to likely submarine cables with confidence scores (0–1), using only public data. Globally: 3.05M IPv4 and 1.43M IPv6 links mapped, 91% of active cables covered; no Africa breakdown. Code and mappings (with landing-point IDs, SoL-validated geolocation, and IP-to-ASN data) are on GitLab under Apache 2.0. The data is a 2022–23 snapshot, so it predates the 2024 cuts and the go-live of 2Africa and Equiano; the later Xaminer work reports weaker coverage in parts of Africa.<sup>[22][23]</sup></p>
+
+<h3>Cable failure measurements</h3>
+<p>The March 14, 2024 West Africa failures (WACS, MainOne, SAT-3/WASC, ACE; submarine landslide off Côte d'Ivoire) are documented at the traffic and routing layer. Cloudflare Radar counted 13 affected countries, as far south as Namibia and South Africa, with ASN-level detail (part of MainOne AS37282 unannounced 07:30–15:00 UTC); its cable attribution came from Azure status and TeleGeography rather than its own cable data. RIPE Atlas anchor pairs between the UK and South Africa showed ≈20–30 ms added latency with packet loss from about 10:00 UTC. Neither can localize a failure to a landing station. The 2023 Congo Canyon and 2024 Red Sea cuts were in scope but no claims about them survived verification.<sup>[24][25]</sup></p>
+
+<h3>Landing stations × grid reliability</h3>
+<p>No verified work links landing stations or their power-feed equipment to grid reliability. The closest pieces are the IODA pilot and Cloudflare's country-level grid outage records above.</p>
+
+<h2>What a joined dataset could look like</h2>
+<p>An openly licensed, facility-level join appears not to exist, and could be assembled from:</p>
+<ul>
+<li>Facilities: OSM <code>telecom=data_center</code> and <code>telecom=cable_landing_station</code> (ODbL), cross-checked against PeeringDB and PCH.</li>
+<li>Cable-to-IP mapping: Nautilus (Apache 2.0), ideally rerun after 2024 with 2Africa, Equiano, and PEACE included.</li>
+<li>Grid: Gridfinder and the World Bank grid map (CC BY 4.0) for nearest-line and voltage, Ember for national generation mix.</li>
+<li>Reliability: Enterprise Surveys c7 and VIIRS proxies now; IODA's power data if released; Cloudflare Radar and RIPE Atlas for event-level ground truth.</li>
+</ul>
+
+<h2>Open questions</h2>
+<ul>
+<li>Does any public dataset geolocate African datacenters with MW capacity and tie them to substations or specific transmission lines?</li>
+<li>How many African landing stations does OSM cover after the April 2026 approval, and how many fall inside <code>telecom=data_center</code> outlines?</li>
+<li>Does TeleGeography's paid data provide station-level coordinates, and will it license for non-commercial research?</li>
+<li>Is there any public data on power supply, backup generation, or PFE outages at African landing stations (Lagos, Mombasa, Melkbosstrand, Abidjan)?</li>
+<li>Which countries are in IODA's power pilot, and do any African utilities (Eskom, KPLC, ECG) publish machine-readable outage feeds?</li>
+<li>Is there a successor to the 2017 World Bank grid map or a maintained OSM-derived African transmission extract?</li>
+<li>How do commercial sources not verified here (Cloudscene, Xalam Analytics, TeleGeography research services, IEA) compare on coverage and licensing?</li>
+</ul>
+
+<h2>Refuted claims</h2>
+<p class="note">These failed verification as stated. The underlying resources may still be useful; check details at the source before relying on them.</p>
+<ul>
+<li>A per-country breakdown of PeeringDB facilities in 2019 for Kenya, Nigeria, Ghana, and others (0–3).</li>
+<li>A per-country breakdown of Data Center Map listings (South Africa 49, Kenya 18, …) (0–3).</li>
+<li>Specific details of the PowerWatch Accra outage dataset (Lab11): sensor count, duration, release location, and outage count (0–3, 1–2).</li>
+<li>The format and fields of the eskom-calendar South African load-shedding CSV (1–2).</li>
+<li>AfTerFibre bulk GIS download via a CartoDB API (0–3).</li>
+<li>OADC Durban physical specifications and opening date (1–2).</li>
+</ul>
+
+<h2>Method and caveats</h2>
+<p>This page combines two automated deep-research runs (Claude, October 20, 2026): one on datacenters and power grids, one on subsea cables and landing stations. Each run split the question into five search angles, fetched about 20 sources, extracted roughly 100 falsifiable claims, and put 25 of them through three independent adversarial verifiers; a claim was dropped if two of three refuted it. In total 43 claims were confirmed and 7 refuted. Budget limits meant many extracted claims were never verified, so absence of a source here is not evidence against it.</p>
+<p>Several primary pages blocked automated access (energydata.info, Data Center Map, some operator sites), so some checks used APIs, mirrors, Wayback snapshots, or syndicated copies. Facility-relationship findings rest on trade press repeating operator releases. Many key open layers are several years old: PeeringDB figures (2019), the World Bank grid map (2017), Gridfinder (≈2019), Nautilus (2022–23).</p>
+
+<h2>Sources</h2>
+<ol class="sources">
+<li><a href="https://www.afpif.org/wp-content/uploads/2019/08/ArnoldNipper-PeeringDB-update.pdf">PeeringDB update, AfPIF 2019 (Arnold Nipper)</a></li>
+<li><a href="https://datacentermap.com/africa">Data Center Map: Africa</a></li>
+<li><a href="https://intelpoint.co/insights/south-africa-accounts-for-22-of-africas-282-data-centres/">Intelpoint: South Africa accounts for 22% of Africa's 282 data centres</a></li>
+<li><a href="https://nairametrics.com/2026/07/27/africas-data-centre-capacity-exceeds-500-mw-with-890-mw-in-pipeline-report/">Nairametrics: Africa's data centre capacity exceeds 500 MW</a></li>
+<li><a href="https://www2.telegeography.com/cite-telegeography-map">TeleGeography: citing and using our maps</a></li>
+<li><a href="https://www2.telegeography.com/license-geocoded-map-data">TeleGeography: license geocoded map data</a></li>
+<li><a href="https://wiki.openstreetmap.org/Tag:telecom=cable_landing_station">OSM wiki: telecom=cable_landing_station</a></li>
+<li><a href="https://manypossibilities.net/african-undersea-cables/">Steve Song: African Undersea Cables</a></li>
+<li><a href="https://manypossibilities.net/afterfibre/">Steve Song: AfTerFibre</a></li>
+<li><a href="https://www.datacenterdynamics.com/en/news/wiocc-lands-2africa-subsea-cable-in-oadc-data-center-in-durban-south-africa/">DCD: WIOCC lands 2Africa in OADC Durban</a></li>
+<li><a href="https://datacentermap.com/nigeria/lagos/mdxi-lekki-dc">Data Center Map: MDXi Lekki</a></li>
+<li><a href="https://engineeringnews.co.za/article/teraco-is-regional-interconnection-point-for-googles-equiano-subsea-cable-2022-11-09">Engineering News: Teraco and Equiano</a></li>
+<li><a href="https://www.datacenterdynamics.com/en/news/kenya-to-get-new-data-center-as-icoloio-breaks-ground-in-mombasa/">DCD: Icolo breaks ground in Mombasa</a></li>
+<li><a href="https://energydata.info/dataset/africa-electricity-transmission-and-distribution-grid-map-2017">energydata.info: Africa Electricity Transmission and Distribution Grid Map</a></li>
+<li><a href="https://www.nature.com/articles/s41597-019-0347-4">Arderne et al., Predictive mapping of the global power system (Scientific Data 2020)</a></li>
+<li><a href="https://ember-energy.org/data/electricity-data-explorer/">Ember: Electricity Data Explorer</a></li>
+<li><a href="https://microdata.worldbank.org/catalog/6435/variable/F1/V62?name=c7">World Bank Microdata: Enterprise Surveys variable c7</a></li>
+<li><a href="https://payneinstitute.mines.edu/indicators-of-electric-power-instability-from-satellite-observed-nighttime-lights/">Payne Institute: power instability from nighttime lights</a></li>
+<li><a href="https://ioda.inetintel.cc.gatech.edu/reports/inside-iodas-pilot-program-for-monitoring-global-power-outage-data/">IODA: pilot program for global power outage data</a></li>
+<li><a href="https://blog.cloudflare.com/q4-2024-internet-disruption-summary/">Cloudflare: Q4 2024 Internet disruption summary</a></li>
+<li><a href="https://arxiv.org/abs/2306.02502">Abdu Jyothi, arXiv 2306.02502</a></li>
+<li><a href="https://arxiv.org/abs/2302.14201">Ramanathan and Abdu Jyothi, Nautilus (arXiv 2302.14201)</a></li>
+<li><a href="https://gitlab.com/netsail-uci/nautilus">Nautilus GitLab repository</a></li>
+<li><a href="https://blog.cloudflare.com/undersea-cable-failures-cause-internet-disruptions-across-africa-march-14-2024">Cloudflare: undersea cable failures across Africa, March 14, 2024</a></li>
+<li><a href="https://ripe90.ripe.net/presentations/128-coop-wg-baltic-sea-cables-emileaben.pdf">RIPE 90: Baltic Sea cables (Aben and Vaquero Ortiz)</a></li>
+</ol>
+
+<footer>Research notes compiled with Claude deep-research. Claims were machine-verified against sources, not peer reviewed; check primary sources before citing.</footer>
+</main>
+</body>
+</html>
